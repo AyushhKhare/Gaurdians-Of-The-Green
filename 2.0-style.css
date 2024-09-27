@@ -30,19 +30,27 @@ overflow: hidden;
     position: fixed;
     top: 0;
     right: 0;
-    padding: 3rem;
+    padding: 2rem 8rem;
     display: flex;
-    gap: 7rem;
+    gap: 5rem;
+    
+    
 }
 
 .nav ul li{
-    font-size: 2rem;
+    font-size: 1.2rem;
     list-style: none;
-    font-weight: 500;
+    font-weight: bold;
+    padding: 6px;
+    cursor: pointer;
+
 }
 
 .hero{
     padding: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .hero .text h1{
@@ -51,10 +59,51 @@ overflow: hidden;
     font-weight: 300;
 }
 
-.text2{
-    color: #406943 ;
-}
+
 
 .text p{
     width: 500px ;
 }
+
+li:hover {
+    /* background-color:rgb(207, 236, 185) ; */
+    border-bottom: #2d6131 solid 3px ;
+    
+
+
+}
+
+.text1 {
+    width: 100px;
+    text-wrap: wrap;
+    line-height: 60px;
+}
+
+.hero p {
+    width: 500px;
+    text-wrap: wrap;
+    
+
+}
+
+.recycle {
+    color: #2d6131;
+}
+
+.aunty_ji img{
+    height: 500px;
+
+}
+
+button {
+        background: #629D66;
+        color: #fcfaf2;
+        border: 0;
+        border-radius: 50px;
+        outline: none;
+        box-shadow: none;
+        padding: 10px 24px;
+        cursor: pointer;
+        margin-top: 12px;
+        margin-left:-7px;
+    }

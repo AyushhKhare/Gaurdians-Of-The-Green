@@ -32,7 +32,10 @@ overflow: hidden;
     right: 0;
     padding: 2rem 8rem;
     display: flex;
-    gap: 5rem;
+/*     gap: 5rem; */
+
+    gap: 8rem;
+
     
     
 }
@@ -43,6 +46,7 @@ overflow: hidden;
     font-weight: bold;
     padding: 6px;
     cursor: pointer;
+
 
 }
 
@@ -95,6 +99,7 @@ li:hover {
 
 }
 
+
 button {
         background: #629D66;
         color: #fcfaf2;
@@ -107,3 +112,4 @@ button {
         margin-top: 12px;
         margin-left:-7px;
     }
+

@@ -20,23 +20,15 @@ gsap.from(".hero .text , p",{
     
 })
 
-/* to be resolved(side button still appears on the left) */
 gsap.to(".btn",{
+    x:200,
     opacity:1,
     duration:0.75,
     delay:1.5
 })
 
-gsap.from(".btn",{
-    x:-500,
-    duration:0.75,
-    delay:1.5
-})
-
-/* isko bhi dekh lena */
-gsap.to(".illust img",{
+gsap.to(".aunty_ji img",{
     opacity:1,
-    x:-100,
     duration:1,
     delay:0.75
 })
@@ -65,7 +57,7 @@ btn.addEventListener("click",()=>{
         
     })
     
-    gsap.to(".illust img",{
+    gsap.to(".aunty_ji img",{
         opacity:0,
         duration:0.75,
     })
@@ -98,10 +90,9 @@ wastebtn.addEventListener("click",()=>{
         
     })
     
-    gsap.to(".illust img",{
+    gsap.to(".aunty_ji img",{
         opacity:0,
         duration:0.75,
-
     })
 
     document.querySelector(".process").style.display = "flex";

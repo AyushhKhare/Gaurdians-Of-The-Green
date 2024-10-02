@@ -10,7 +10,7 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-font-family: Fredoka;
+font-family: fredoka;
 color: var(--text-color-1) ;
 
 }
@@ -30,7 +30,7 @@ overflow: hidden;
 
 .nav{
     position: absolute;
-    z-index: 10;
+    z-index: 99;
     top: 2px;
     width: 90%;
     display: flex;
@@ -54,7 +54,7 @@ overflow: hidden;
 nav h1{
     cursor: pointer;
     font-size: 1.2rem;
-    padding: 20px 20px;
+    padding: 20px 0px;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -87,21 +87,26 @@ nav svg{
     padding: 0 20px;
 }
 
+a{
+    text-decoration: none;
+}
 
 @media(max-width:750px){
     nav .link-container{
         height:auto;
         width: 50vw;
-        padding: 1rem;
+        padding: 1rem 0rem;
         display: none;
         flex-direction: column;
         background-color: black;
         align-items:flex-end;
         border-radius: 20px;
-        position: absolute;
+        position:absolute;
+        z-index: 10;
         top: 20px;
         right: 0;
         gap: 2vh;
+        /* transition: 1s ease-out; */
     }
     nav h1{
         display: flex;
@@ -122,8 +127,18 @@ nav svg{
         /* background-color: #fcfaf2; */
     }
     #sidebar-active:checked ~ #overlay{
-        background-color: aquamarine;
+        /* background-color: aquamarine; */
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index:9 ;
     }
+    /* .link-container h1:focus ~ .link-container{
+        display: none;
+    } */
+
 }
 @media(max-width:580px){
     nav .logo h1{
@@ -211,7 +226,7 @@ nav svg{
     padding: 0.3rem 0.8rem 0.3rem;
     border-radius: 2rem;
     cursor: pointer;
-    transition: 0.1s ease-in-out;
+    /* transition: 1s ease-out; */
 }
 .hero-text .btn:hover{
     background-color: var(--text-color-2);
@@ -281,22 +296,85 @@ nav svg{
 .waste-segregation-page{
     padding: var(--main-padding);
     display: none;
-    height: 90%;
+    height: 100%;
     width: 100%;
     background-color: var(--background-color);
     position: absolute;
     z-index: 10;
-    top: 10%;
+    top: 0;
     left: 0;
-    justify-content: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    /* justify-content: space-around; */
 }
 
 /* IMAGE TAKING SECTION  */
 .img-container{
-    padding: 10px;
-    background-color: black;
-    width: 100%;
-    height: 40vh;
-    text-align: center;
+    margin-top: 100px;
+    padding: 30px;
+    padding-top: 20px;
+    /* background-color: black; */
+    border: 2px dashed black;
     border-radius: 30px;
+    width:500px;
+    height: max-content;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+.img-container>*{
+    cursor: pointer;
+}
+.img-container #img-view img{
+    /* background-color: black; */
+    
+    border-radius: 20px;
+    width: 70%;
+    height: 90%;
+    object-fit: contain;
+}
+#img-view p{
+    font-size: 18px;
+}
+#img-view span{
+    display: block;
+    font-size: 12px;
+    color:var(--text-color-2);
+}
+.process-start-btn h1{
+    color:var(--background-color);
+    background-color:var(--text-color-1);
+    padding:10px 40px;
+    border-radius:30px;
+    font-weight:400;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.process-start-btn h1:hover{
+    background-color:var(--text-color-2);
+}
+
+@media (max-width:580px) {
+
+    .img-container{
+        width: 350px;
+    }
+
+    
+}
+
+
+/* ABOUT US SECTION  */
+
+.about-us-section{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: aquamarine;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 11;
 }

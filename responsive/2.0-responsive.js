@@ -8,28 +8,32 @@ function inANimation(){
         y:-200,
         duration:0.75,
         delay:0.75,
-        ease:"power3.out",
+        // ease:"power3.out",
         
     })
 
-    gsap.from(".hero .text,.leaf img ",{
+    tl.from(".leaf img",{
+        y:"100%",
+        delay:0.5
+    })
+    gsap.from(".hero .text",{
         x:-800,
         duration:0.75,
-        delay:0.5,
+        
         
     })
-
     gsap.from(".hero-text p",{
-        x:-1400,
+        x:"-200%",
         duration:0.75,
-        delay:0.4,
+        delay:0.2
     })
-    
-    gsap.from(" .hero .hero-text .btn",{
+    gsap.from(".hero-text .btn",{
         x:-800,
-        duration:1,
-        // delay:0.7,   
+        duration:0.75,
+        delay:0.4
     })
+
+    
 }
 inANimation();
 
@@ -38,81 +42,89 @@ inANimation();
 // START BUTTON ANIMATION     
 
 function outAnimation(){
-    document.querySelector(".hero-text p").style.display="none"
-    gsap.to(".leaf img",{
-        x:-800,
-        duration:0.75,
-        
-    })
-    gsap.to(".hero .text , p",{
-        x:-800,
+    gsap.from(".waste-segregation-page",{
+        y:"100%",
         duration:1,
-        
     })
-    
-    gsap.to(".btn",{
-        x:-500,
-        opacity:1,
-        duration:0.75,
-        
-    })
-
     document.querySelector(".waste-segregation-page").style.display = "flex";
-    gsap.from(".process",{
-        y:800,
-        duration:0.5,
-        delay:1
-    })
 }
 var btn = document.querySelector(".btn");
 btn.addEventListener("click",outAnimation)
 
 
-// HOME BUTTON ANIMATION 
+// NAV BUTTON OUT ANIMATION 
 
-var homeBtn = document.querySelector(".home")
-homeBtn.addEventListener("click",()=>{
-    inANimation();
-    document.querySelector(".waste-segregation-page").style.display = "none";
+var navbtn = document.querySelector(".link-container > h1")
+navbtn.addEventListener("focus",()=>{
+    document.querySelector(".link-container").style.display = "none"
 })
 
 // WASTE SEGREGATION BUTTON ANIMATION 
 
 var wastebtn = document.querySelector(".wastebtn")
 wastebtn.addEventListener("click",()=>{
-    document.querySelector(".waste-segregation-page").style.display = "block";
+    aboutSection.style.zIndex = 9
+    P.innerHTML = "Drag and drop or click here <br> to upload image"
+    imageview.src="asset/image-upload-concept-landing-page.png"
+    document.querySelector(".waste-segregation-page").style.display = "flex";
     gsap.from(".waste-segregation-page",{
-        y:2000,
+        y:"100%",
         duration:1,
     })
+    // location.reload(true)
 })
 
 
 // ABOUT US SECTON 
-
+var aboutSection = document.querySelector(".about-us-section")
 var about = document.querySelector(".aboutbtn")
 about.addEventListener("click",()=>{
-    document.querySelector(".contact").style.display = "block";
-    gsap.from(".contact",{
-        x:2000,
+    aboutSection.style.zIndex = 11
+    aboutSection.style.display = "flex"
+    gsap.from(".about-us-section",{
+        x:"100%",
         duration:0.75,
+        delay:0.5
     })
     
 })
 
 
-// let image = document.querySelector("label img")
-// let input = document.querySelector("#input-file")
 
-// input.onchange = function(){
-//     image.src = URL.createObjectURL(input.files[0]);
-// }
 
-// image.addEventListener("drogover",function(e){
-//     e.preventDefault();
-// });
-// image.addEventListener("drop",function(e){
-//     e.preventDefault();
-//     input.files = eldataTransfer.files;
-// });
+// IMAGE TAKING
 
+const dropArea = document.querySelector("#drop-area")
+const inputfile = document.querySelector("#image-zone")
+const imageview = document.querySelector(".uploadImg")
+const P = document.querySelector("#img-view p")
+
+inputfile.addEventListener("change",uploadImage)
+
+function uploadImage(){
+    let imglink = URL.createObjectURL(inputfile.files[0]);
+    imageview.src = imglink
+    P.innerHTML = "SELECTEDIMAGE"
+}
+
+dropArea.addEventListener("dragover",function(e){
+    e.preventDefault();
+})
+dropArea.addEventListener("dragover",function(e){
+    e.preventDefault();
+    inputfile.files = e.dataTranfer.files;
+})
+
+
+
+// START BUTTON 
+    
+
+// GAME SECTION 
+
+var gamebtn = document.querySelector(".gamesbtn")
+
+gamebtn.addEventListener("click",()=>{
+    
+    gsap.from()
+})

@@ -55,9 +55,11 @@ btn.addEventListener("click",outAnimation)
 // NAV BUTTON OUT ANIMATION 
 
 var navbtn = document.querySelector(".link-container > h1")
-navbtn.addEventListener("focus",()=>{
-    document.querySelector(".link-container").style.display = "none"
+navbtn.addEventListener("click",()=>{
+    document.querySelector("#side-active").checked = false
 })
+
+// var menu-btn
 
 // WASTE SEGREGATION BUTTON ANIMATION 
 

@@ -79,8 +79,7 @@ nav svg{
 }
 
 .open-sidebar{
-    margin-top: 2px;
-    margin-right: 20px;
+    margin-top: 2px 20px;
 }
 .open-sidebar, .close-sidebar{
     display: none;
@@ -108,7 +107,7 @@ a{
         gap: 2vh;
         /* transition: 1s ease-out; */
     }
-    nav h1{
+    nav h1, .label-menu{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -151,7 +150,7 @@ a{
 
 .leaf img{
     height: 45vh;
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
 }
@@ -275,14 +274,13 @@ a{
     .hero-text{
         width: 100%;
         align-items: center;
-        gap: 1.5rem;
+        gap:16px;
     }
     .hero .text1 ,.hero .text2 {
         font-size: 3rem;
     }
     .hero-text p{
         text-align: justify;
-        padding: 1rem 0;
         width:80vw;
         font-size: 1.3rem;
     }
@@ -303,19 +301,16 @@ a{
     z-index: 10;
     top: 0;
     left: 0;
-    /* justify-content: center; */
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    /* justify-content: space-around; */
+    justify-content: space-evenly;
 }
 
 /* IMAGE TAKING SECTION  */
 .img-container{
-    margin-top: 100px;
     padding: 30px;
     padding-top: 20px;
-    /* background-color: black; */
     border: 2px dashed black;
     border-radius: 30px;
     width:500px;
@@ -372,7 +367,7 @@ a{
     display: none;
     height: 100%;
     width: 100%;
-    background-color: aquamarine;
+    background-color: var(--background-color);
     position: absolute;
     left: 0;
     top: 0;
